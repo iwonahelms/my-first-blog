@@ -1,22 +1,21 @@
+
+    {{ post }}
+
 <html>
+{% endfor %}
     <head>
+
         <title>Sweet Time Berlin blog</title>
     </head>
     <body>
-        <div>
+        {{ posts }}
             <h1><a href="/">Sweet Time Berlin blog</a></h1>
-        </div>
+        {{ posts }}
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>\Sweet Time Berlin blog has a new blog post.</p>
-        </div>
 
-        <div>
-            <p>published: 02.06.2018, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Sweet Time Berlin blog, has published their second blog post.</p>
-        </div>
-    </body>
-</html>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
