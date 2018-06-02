@@ -1,21 +1,17 @@
-
-    {{ post }}
-
 <html>
-{% endfor %}
     <head>
-
         <title>Sweet Time Berlin blog</title>
     </head>
     <body>
-        {{ posts }}
-            <h1><a href="/">Sweet Time Berlin blog</a></h1>
-        {{ posts }}
-
         <div>
-
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+            <h1><a href="/">Sweet Time Berlin blog</a></h1>
+        </div>
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
 {% endfor %}
+    </body>
+</html>
